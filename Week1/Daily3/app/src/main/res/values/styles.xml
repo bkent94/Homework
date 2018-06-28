@@ -1,0 +1,36 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Base.Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/text_color_primary_1</item>
+    </style>
+
+    <style name="myName" parent="AppTheme" >
+        <item name="android:textColor">@color/red</item>
+        <item name="android:textSize">40sp</item>
+        <item name="android:fontFamily">@font/greatvibes_regular</item>
+    </style>
+
+    <style name="myEducation" parent="AppTheme">
+        <item name="android:textColor">@color/blue</item>
+    <item name="android:textSize">30sp</item>
+        <item name="android:fontFamily">@font/montserratalternates_black</item>
+    </style>
+
+    <style name="myLocation" parent="AppTheme" >
+        <item name="android:textColor">@color/yellow</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/opensans_bold</item>
+        </style>
+
+    <style name="myHobbies" parent="AppTheme" >
+        <item name="android:textColor">@color/green</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:fontFamily">@font/roboto_black</item>
+    </style>
+
+</resources>

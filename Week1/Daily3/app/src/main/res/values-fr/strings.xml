@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">du quotidien3</string>
+    <string name="myName">prénom: Benjamin Kent</string>
+    <string name="myLocation">Emplacement: 286 Pinehurst Lane Marietta, GA</string>
+    <string name="myEducation">Éducation: Institut de technologie wentworth</string>
+    <string name="myHobbies">Loisirs: échecs</string>
+
+</resources>

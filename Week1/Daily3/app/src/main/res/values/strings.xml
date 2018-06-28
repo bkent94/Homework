@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Daily3</string>
+    <string name="myName">Name: Benjamin Kent</string>
+    <string name="myLocation">Location: 286 Pinehurst Lane Marietta, GA</string>
+    <string name="myEducation">Education: Wentworth Institute of Technology</string>
+    <string name="myHobbies">Hobbies: Chess</string>
+    <string name="my_face">my face</string>
+
+</resources>
