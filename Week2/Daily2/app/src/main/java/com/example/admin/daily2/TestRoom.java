@@ -23,6 +23,8 @@ public class TestRoom {
                 {new Room(false), new Room(false), new Room(false), new Room(false), new Room(false), new Room(false), new Room(false), new Room(false), new Room(false)
                 } };
 
+        System.out.println("Number of rooms: "+verticalTrue[0].length+","+verticalTrue.length);
+
         if( Room.isOutbreak(verticalTrue)){
             System.out.println("Outbreak Found");
         }

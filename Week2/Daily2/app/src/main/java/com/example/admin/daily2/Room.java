@@ -14,8 +14,8 @@ public class Room {
     public static boolean isOutbreak(Room[][] floor){
 
         boolean foundOutbreak=false;
-        for(int i=0;i<floor.length-1;i++){
-            for(int j=0;j<floor.length-1;j++){
+        for(int i=0;i<floor.length;i++){
+            for(int j=0;j<floor[i].length;j++){
 
                 if(floor[i][j].visited==true){
                     continue;

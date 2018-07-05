@@ -55,12 +55,9 @@ public class OrganizationChart {
                    }
                }
            }
-           System.out.println("Loop"+i+" Manager: "+manager+" Manager coordinates "+X+","+Y);
-           printOrgChartRepresentation(orgChartRepresentation);
 
        }
 
-       System.out.println("End of Loops");
        return orgChartRepresentation;
 
 
