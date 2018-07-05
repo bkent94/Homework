@@ -6,11 +6,14 @@
 
 <item android:id="@+id/start"
     android:title="Start"
+    android:icon="@drawable/home_icon"
     ></item>
     <item android:id="@+id/web"
         android:title="Web"
+        android:icon="@drawable/web_html_icon"
         ></item>
     <item android:id="@+id/songs"
         android:title="Songs"
+        android:icon="@drawable/music_library_icon"
         ></item>
 </menu>
