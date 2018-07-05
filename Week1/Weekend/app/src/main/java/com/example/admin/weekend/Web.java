@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.webkit.WebView;
 
 public class Web extends AppCompatActivity  implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout navigationDrawerLayout;
@@ -31,6 +32,9 @@ public class Web extends AppCompatActivity  implements NavigationView.OnNavigati
         navigationView = (NavigationView)findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         navigationView.getMenu().findItem(R.id.web).setChecked(true);
+
+        WebView webView =findViewById(R.id.myWebView);
+        webView.loadUrl("https://developer.android.com");
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
