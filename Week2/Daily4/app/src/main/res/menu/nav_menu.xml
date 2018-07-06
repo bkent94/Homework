@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:id="@+id/home"
+
+    android:title="Home"></item>
+
+    <item android:id="@+id/implicit_intents"
+
+        android:title="ImplicitIntents"></item>
+
+    <item android:id="@+id/emi_calculator"
+
+        android:title="EMI Calculator"></item>
+
+    <item android:id="@+id/add_people"
+
+        android:title="Add People"></item>
+
+
+</menu>
