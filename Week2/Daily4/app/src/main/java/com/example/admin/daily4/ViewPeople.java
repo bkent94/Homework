@@ -1,5 +1,6 @@
 package com.example.admin.daily4;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -19,8 +20,8 @@ public class ViewPeople extends AppCompatActivity {
 
         ListView listOfPeopleView=findViewById(R.id.listOfPeople);
 
-
-       ArrayList listOfPeople= savedInstanceState.getParcelableArrayList(getString(R.string.list_of_people));
+        Intent intent=getIntent();
+       ArrayList listOfPeople= intent.getParcelableArrayListExtra(getString(R.string.list_of_people));
 
         ArrayAdapter<Person> personArrayAdapter =new ArrayAdapter<Person>(this,R.layout.listview,listOfPeople);
 

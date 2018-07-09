@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -41,6 +42,15 @@ public class AddPeople extends MainActivity{
 
         String name=personName.getText().toString();
         String ageStr=personAge.getText().toString();
+
+        if(name.equals("")|| ageStr.equals("")){
+            Toast toast=new Toast(this.getApplicationContext());
+            toast.setText("Please fill in name and age");
+            toast.setDuration(Toast.LENGTH_SHORT);
+            toast.show();
+            return;
+        }
+
         int age=Integer.valueOf(ageStr);
         String gender=currentGender.getText().toString();
 
@@ -52,7 +62,18 @@ public class AddPeople extends MainActivity{
 
     public void ViewPeople(View view) {
 
+
+        if(listOfPeople.size()==0){
+            Toast toast=new Toast(this.getApplicationContext());
+            toast.setText("Please add a person");
+            toast.setDuration(Toast.LENGTH_SHORT);
+            toast.show();
+            return;
+        }
+
         Intent intent=new Intent(getApplicationContext(),ViewPeople.class);
+
+
         intent.putParcelableArrayListExtra(getString(R.string.list_of_people),listOfPeople);
         startActivity(intent);
     }

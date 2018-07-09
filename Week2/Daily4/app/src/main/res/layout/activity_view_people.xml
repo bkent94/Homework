@@ -16,9 +16,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/listOfPeople"
             >
-            <android.support.v7.view.menu.ListMenuItemView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"></android.support.v7.view.menu.ListMenuItemView>
+
         </ListView>
 
 
