@@ -21,7 +21,7 @@ class TreeNode<T>{
         this.rightTreeNode = rightTreeNode;
     }
     public TreeNode getLeftTreeNode() {
-        return rightTreeNode;
+        return leftTreeNode;
     }
 
     public void setLeftTreeNode(TreeNode leftTreeNode) {
@@ -77,10 +77,13 @@ public class BinarySearchTree<T> {
     public String getSearchTreeMap() {
         String str = "";
 
+        if(head==null)
+            return str;
 
         TreeNode current = head;
         str+=current.getValue().toString();
-        str= Search(current.getRightTreeNode(),str)+ Search(current.getLeftTreeNode(),str);
+        str=Search(current.getRightTreeNode(),str)+Search(current.getLeftTreeNode(),str);
+
 
         return str;
     }
@@ -90,12 +93,13 @@ public class BinarySearchTree<T> {
 
 
 
-        while (current != null) {
+        if (current != null) {
             str += ","+current.getValue().toString();
-            str=Search(current.getRightTreeNode(),str)+Search(current.getLeftTreeNode(),str);
+            str+=Search(current.getRightTreeNode(),str)+Search(current.getLeftTreeNode(),str);
+            return str;
         }
 
-        return str;
+        return "";
     }
 
 
