@@ -24,10 +24,38 @@ public class ListOfAnimalsAdapter extends RecyclerView.Adapter<ListOfAnimalsAdap
     @Override
     public ListOfAnimalsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.list_of_animals,parent,false);
+
+        int layout;
+
+        if(viewType==1){
+            layout=R.layout.list_of_animals;
+        }
+
+        else{
+            layout=R.layout.list_of_animals1;
+        }
+
+        View view= LayoutInflater.from(parent.getContext()).inflate(layout,parent,false);
         return new ViewHolder(view);
 
     }
+
+    @Override
+    public int getItemViewType(int position) {
+
+
+        Integer weight=Integer.valueOf(animalList.get(position).getWeight());
+        if(weight>=2000){
+            return 1;
+        }
+
+        else{
+            return 0;
+        }
+
+
+    }
+
 
     @Override
     public void onBindViewHolder(@NonNull ListOfAnimalsAdapter.ViewHolder viewHolder, int position) {

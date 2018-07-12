@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    >
+
+
+    <!--Adding static fragments-->
+    <fragment
+        android:name="com.example.admin.fragments.fragments.StaticFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/redFrag"
+        ></fragment>
+    <!--Adding fragment dynamically-->
+
+
+   <Button
+       android:id="@+id/btnAddRedFrag"
+       android:onClick="onAddingFragments"
+       android:text="Add red fragment"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnAddBlueFrag"
+        android:onClick="onAddingFragments"
+        android:text="Add blue fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:onClick="onRemoveFragments"
+        android:text="Remove all fragments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <FrameLayout
+        android:id="@+id/fragmentHolder1"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"></FrameLayout>
+    <FrameLayout
+        android:id="@+id/fragmentHolder2"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"></FrameLayout>
+
+</LinearLayout>
