@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    >
+
+<!--Started services-->
+<!--Services class-->
+    <Button
+        android:id="@+id/btnStartService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onStartedServices"
+        android:text="Start normal service"
+        />
+    <Button
+        android:id="@+id/btnStopService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onStartedServices"
+        android:text="Stop normal service"
+        />
+    <!--Intent service-->
+    <Button
+        android:id="@+id/btnStartIntent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onStartedServices"
+        android:text="Start Intent service"
+        />
+    <!--Bound service-->
+    <Button
+        android:onClick="onBoundServices"
+        android:text="Bound to service"
+        android:id="@+id/btnBoundService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:onClick="onBoundServices"
+        android:text="Get data from service"
+        android:id="@+id/btnGetData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:onClick="onBoundServices"
+        android:text="Unbind"
+        android:id="@+id/btnUnBind"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!--Schedule job-->
+    <Button
+        android:onClick="onScheduleJob"
+        android:text="Schedule job"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!--Start service in own process-->
+    <Button
+        android:text="Start service on new process"
+        android:onClick="onNewProcess"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>
