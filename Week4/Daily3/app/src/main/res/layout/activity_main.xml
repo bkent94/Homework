@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+
+ <fragment
+     android:id="@+id/githubProfile"
+  android:name="com.example.admin.daily3.GithubProfile"
+     android:layout_width="wrap_content"
+     android:layout_height="match_parent"
+     tools:layout="@layout/fragment_github_profile" />
+
+ <fragment
+     android:id="@+id/githubRepository"
+     android:name="com.example.admin.daily3.GithubRepositories"
+     android:layout_width="wrap_content"
+     android:layout_height="match_parent"
+     tools:layout="@layout/fragment_github_repositories"
+     />
+
+</LinearLayout>

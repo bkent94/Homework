@@ -22,4 +22,54 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+
+    <!--ok http-->
+    <Button
+        android:text="Http Sync"
+        android:onClick="onOkhttpSync"
+        android:id="@+id/btnOkhttpSync"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:text="HTTP Async"
+        android:id="@+id/btnOkhttpAsync"
+        android:onClick="onOkhttpAsync"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <!--Retrofit-->
+    <Button
+        android:text="Retrofit Sync"
+        android:onClick="onRetrofit"
+        android:id="@+id/btnRetroSync"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:text="Retrofit Async"
+        android:onClick="onRetrofit"
+        android:id="@+id/btnRetroAsync"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:text="Retrofit RxJava"
+        android:onClick="onRetrofit"
+        android:id="@+id/btnRetroRxJava"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:onClick="onRetrofit"
+        android:text="Retrofit Java Custom"
+        android:id="@+id/btnRetroRxCustom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:text="Retrofit RxJava Custom"
+        android:onClick="onRetrofit"
+        android:id="@+id/btnRetroCustomRxJava"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tvokhttp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>
