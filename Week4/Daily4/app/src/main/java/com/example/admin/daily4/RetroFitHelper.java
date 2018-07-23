@@ -28,6 +28,8 @@ import java.util.List;
 import java.util.Observable;
 import java.util.ServiceConfigurationError;
 
+import javax.inject.Inject;
+
 import io.reactivex.Observer;
 import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
@@ -54,6 +56,11 @@ public class RetroFitHelper {
     public static final String APP_KEY="062648fc51464532b0644cdf5a8184ab";
     public static final String GET="search";
     public static final String TAG=RetroFitHelper.class.getSimpleName()+"_TAG";
+
+    @Inject
+    public RetroFitHelper(){
+
+    }
 
     private Retrofit createClient(){
         Retrofit retrofit= new Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create())

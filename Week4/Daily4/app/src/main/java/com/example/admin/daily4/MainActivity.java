@@ -6,6 +6,8 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Build;
+import android.os.Handler;
+import android.os.Looper;
 import android.os.Parcelable;
 import android.support.annotation.RequiresApi;
 import android.support.v4.content.LocalBroadcastManager;
@@ -20,10 +22,13 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-import com.example.admin.daily4.BroadcastReceivers.MyReceiver;
+
 import com.example.admin.daily4.adapter.RecipeListAdapter;
+import com.example.admin.daily4.component.DaggerRetrofitComponent;
+import com.example.admin.daily4.component.RetrofitComponent;
 import com.example.admin.daily4.model.Hit;
 import com.example.admin.daily4.model.Recipe;
+import com.example.admin.daily4.module.RetroFitProvider;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -32,15 +37,20 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
 import retrofit2.Callback;
 
 public class MainActivity extends AppCompatActivity implements RetroFitHelper.Callback,View.OnClickListener {
 
     private RecyclerView recipeList;
     private EditText etSearch;
-    private RetroFitHelper retroFitHelper;
+    @Inject
+    public RetroFitHelper retroFitHelper;
     public static final String TAG=MainActivity.class.getSimpleName()+"_TAG";
-    private MyReceiver myReceiver;
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,23 +60,23 @@ public class MainActivity extends AppCompatActivity implements RetroFitHelper.Ca
         etSearch = findViewById(R.id.etSearch);
         recipeList = findViewById(R.id.recipeList);
         recipeList.setLayoutManager(new GridLayoutManager(this,3));
-        retroFitHelper = new RetroFitHelper();
 
-        myReceiver = new MyReceiver(recipeList);
+
+
+
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        IntentFilter intentFilter= new IntentFilter();
-        intentFilter.addAction("MY_ACTION");
-        registerReceiver(myReceiver,intentFilter);
+        RetrofitComponent retrofitComponent=DaggerRetrofitComponent.builder().build();
+retrofitComponent.provideRetrofit(this);
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        unregisterReceiver(myReceiver);
+
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -87,7 +97,7 @@ public class MainActivity extends AppCompatActivity implements RetroFitHelper.Ca
             @Override
             public void run() {
 
-                ArrayList<Parcelable> imageList=new ArrayList<>();
+                final ArrayList<Bitmap> imageList=new ArrayList<>();
                 try {
 
                     for (int i = 0; i <recipes.size() ; i++) {
@@ -107,10 +117,15 @@ public class MainActivity extends AppCompatActivity implements RetroFitHelper.Ca
                 ArrayList<Parcelable> parcelableRecipes= new ArrayList<>();
                 parcelableRecipes.addAll(recipes);
 
-Intent intent=new Intent("MY_ACTION");
-                intent.putParcelableArrayListExtra("recipes",parcelableRecipes);
-                intent.putParcelableArrayListExtra("images",imageList);
-                sendBroadcast(intent);
+                Handler handler = new Handler(Looper.getMainLooper());
+
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        recipeList.setAdapter(new RecipeListAdapter(recipes,imageList));
+                    }
+                });
+
             }
 
         }).start();

@@ -68,7 +68,7 @@ ViewHolder viewHolder =new ViewHolder(imageView);
     @Override
     public int getItemCount() {
         Log.d(TAG, "getItemCount: ");
-        return recipes.size();
+        return images.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
