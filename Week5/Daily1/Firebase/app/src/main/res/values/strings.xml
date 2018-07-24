@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Firebase</string>
+    <string name="facebook_app_id">1896663493728102</string>
+    <string name="fb_login_protocol_scheme">fb1896663493728102</string>
+    <string name="com.twitter.sdk.android.CONSUMER_KEY">r8jSNMEFD2BRYi0SRiL5DAEkg</string>
+    <string name="com.twitter.sdk.android.CONSUMER_SECRET">XoAuAWyW8lXYHtDsmMOITUnTDduAs93lD1mEbIK1ITLoXhNjpS</string>
+
+
+</resources>
